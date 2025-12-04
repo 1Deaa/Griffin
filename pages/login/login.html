@@ -1,52 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<title>Login</title>
-	<link href="login.css" rel="stylesheet">
-	<link href="../../media/main-logo.png" rel="icon" type="image/png">
-</head>
-
-<body>
-
-	<h1 class="page-title">Login to Continue</h1>
-
-	<div class="login-card">
-		<div class="logo-section">
-			<img src="../../media/main-logo.png" alt="Main-Logo">
-		</div>
-
-		<div class="form-section">
-			<div class="input-group">
-				<label>Username</label>
-				<input type="text" id="username">
+	<head>
+		<meta charset="UTF-8">
+		<title>Login</title>
+		<link href="login.css" rel="stylesheet">
+		<link href="../../media/main-logo.png" rel="icon" type="image/png">
+	</head>
+	<body>
+		<h1 class="page-title">Login to Continue</h1>
+		<div class="login-card">
+			<div class="logo-section">
+				<img src="../../media/main-logo-transparent.png" alt="Main-Logo">
 			</div>
-			<div class="input-group">
-				<label>Password</label>
-				<input type="password" id="password">
+			<div class="form-section">
+				<div class="input-group">
+					<label>Username</label>
+					<input type="text" id="username">
+				</div>
+				<div class="input-group">
+					<label>Password</label>
+					<input type="password" id="password">
+				</div>
+				<div id="error-msg" class="error-text">Please enter your username and password</div>
+				<button onclick="login()">Login</button>
 			</div>
-			<div id="error-msg" class="error-text">Please enter your username and password</div>
-			<button onclick="login()">Login</button>
 		</div>
-	</div>
-
-	<script>
-		function login() {
-			const user = document.getElementById("username").value.trim();
-			const pass = document.getElementById("password").value.trim();
-			const errorMsg = document.getElementById("error-msg");
-
-			if (user === "" || pass === "") {
-				errorMsg.innerText = "Please enter your username and password";
-				errorMsg.style.display = "block";
-			} else {
-				errorMsg.style.display = "none";
-				// Replace this alert with actual backend submission
-				alert("Login submitted! Replace with validate.php");
-			}
-		}
-	</script>
-</body>
-
+		<script src="login.js"></script>
+	</body>
 </html>

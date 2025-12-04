@@ -10,13 +10,18 @@ body
 {
     margin: 0;
     padding: 0;
-    height: 85vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
     background-color: #333;
+    background-image: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.25)), url('../../media/login-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .page-title
@@ -33,33 +38,27 @@ body
     display: flex;
     background-color: #fff;
     border-radius: 13px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 0 5px rgba(44, 44, 44, 0.3);
     overflow: hidden;
     width: 600px;
     max-width: 90%;
 	transition: all 0.5s ease;
 }
 
-.login-card:hover
-{
-	box-shadow: 0 10px 25px rgba(100, 0, 0, 0.2);
-	transition: all 0.5s ease;
-}
-
 .logo-section
 {
-    width: 150px;
+    width: 175px;
     background-color: #eee;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 5px;
 }
 
 .logo-section img
 {
     max-width: 100%;
-    max-height: 150px;
+    max-height: 175px;
     object-fit: contain;
     -webkit-user-drag: none;
     pointer-events: none;
@@ -100,7 +99,7 @@ body
 .input-group input:focus
 {
     border-color: #ef0001;
-    box-shadow: 0 0 5px rgba(231,76,60,0.3);
+    box-shadow: 0 0 5px rgba(189, 1, 1, 0.3);
 }
 
 .error-text
@@ -128,7 +127,7 @@ button
 
 button:hover
 {
-    background-color: #ef0000d0;
+    background-color: #ef0001;
 }
 
 @media(max-width: 600px)
