@@ -60,5 +60,21 @@ function login()
     }
 }
 
-// Attach event listener to the login button
+/* Event Listeners */
 document.getElementById("login-btn").addEventListener("click", login);
+document.getElementById("password").addEventListener("keydown", function(event) 
+{
+	if (event.key === "Enter")
+	{
+		event.preventDefault();
+		document.getElementById("login-btn").click();
+	}
+});
+document.getElementById("username").addEventListener("keydown", function(event) 
+{
+	if (event.key === "Enter")
+	{
+		event.preventDefault();
+		document.getElementById("login-btn").click();
+	}
+});
