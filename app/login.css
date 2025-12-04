@@ -10,14 +10,14 @@ body
 {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
     background-color: #333;
-    background-image: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.25)), url('../../media/login-background.jpg');
+    background-image: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.25)), url('./media/login-background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -37,7 +37,7 @@ body
 {
     display: flex;
     background-color: #fff;
-    border-radius: 13px;
+    border-radius: 12px;
     box-shadow: 0 0 5px rgba(44, 44, 44, 0.3);
     overflow: hidden;
     width: 600px;
@@ -48,11 +48,11 @@ body
 .logo-section
 {
     width: 175px;
-    background-color: #eee;
+    background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+    padding: 7px;
 }
 
 .logo-section img
@@ -98,8 +98,8 @@ body
 
 .input-group input:focus
 {
-    border-color: #ef0001;
-    box-shadow: 0 0 5px rgba(189, 1, 1, 0.3);
+    border-color: #e5993c;
+    box-shadow: 0 0 5px rgba(189, 76, 1, 0.3);
 }
 
 .error-text
@@ -127,7 +127,13 @@ button
 
 button:hover
 {
-    background-color: #ef0001;
+    background-color: #ba4d24;
+}
+
+.copyright
+{
+    color: #ccc;
+    font-size: 13px;
 }
 
 @media(max-width: 600px)
