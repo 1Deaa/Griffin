@@ -1,6 +1,7 @@
 <?php
 session_start();
-require 'config.php';
+
+require '../config.php';
 
 $salt = getenv('SALT');
 
@@ -9,7 +10,7 @@ $password = trim($_POST['password'] ?? '');
 
 if ($username === '' || $password === '')
 {
-	header("Location: index.html?error=" . urlencode("Please enter username and password"));
+	header("Location: login.php?error=" . urlencode("Please enter username and password"));
 	exit;
 }
 
@@ -22,7 +23,7 @@ if ($stmt->num_rows === 0)
 {
 	$stmt->close();
 	$mysqli->close();
-	header("Location: index.html?error=" . urlencode("User not found"));
+	header("Location: login.php?error=" . urlencode("User not found"));
 	exit;
 }
 
@@ -46,13 +47,13 @@ if ($password_valid)
 	$_SESSION['username'] = $username;
 	$_SESSION['privileges'] = $privileges;
 
-	$redirect = ($privileges == 1) ? 'admin_dashboard.php' : 'user_dashboard.php';
+	$redirect = ($privileges == 1) ? '/admin/overview' : 'user_dashboard.php';
 	header("Location: $redirect");
 	exit;
 } 
 else
 {
-	header("Location: index.html?error=" . urlencode("Invalid password"));
+	header("Location: login.php?error=" . urlencode("Invalid password"));
 	exit;
 }
 

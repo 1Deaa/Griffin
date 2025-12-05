@@ -1,0 +1,14 @@
+RewriteEngine On
+
+#LOGIN
+RewriteRule ^login/?$ /login/login.php [L]
+#REGISTER
+RewriteRule ^register/?$ /register/register.php [L]
+#LOGOUT
+RewriteRule ^logout/?$ logout.php [L]
+#HOME
+RewriteRule ^/?$ index.php [L]
+#ADMIN OVERVIEW
+RewriteRule ^admin/overview/?$ /admin/overview/admin.php [L]
+#ADMIN
+RewriteRule ^admin/?$ /admin/overview/admin.php [L]
