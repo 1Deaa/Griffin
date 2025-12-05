@@ -1,7 +1,8 @@
 services:
   apache:
-    build: ./php
+    build: .
     container_name: griffin-apache
+    restart: always
     ports:
       - "8080:80"
     volumes:

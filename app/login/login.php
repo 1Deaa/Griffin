@@ -1,17 +1,27 @@
+<?php
+session_start();
+if (isset($_SESSION['username']))
+{
+	$redirect = ($_SESSION['privileges'] == 1) ? '/admin/overview/' : 'user_dashboard.php';
+	header("Location: $redirect");
+	exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Griffin Login</title>
-	<link href="./media/griffin-logo-transparent.png" rel="icon" type="image/png">
+	<link href="../media/griffin-logo-transparent.png" rel="icon" type="image/png">
 	<link href="login.css" rel="stylesheet">
 </head>
 <body>
 	<h1 class="page-title">Login to Continue</h1>
 	<div class="login-card">
 		<div class="logo-section">
-			<img src="./media/griffin-logo-transparent.png" alt="Main-Logo">
+			<img src="../media/griffin-logo-transparent.png" alt="Main-Logo">
 		</div>
 		<div class="form-section">
 			<div class="input-group">
@@ -23,7 +33,10 @@
 				<input type="password" id="password">
 			</div>
 			<div id="error-msg" class="error-text" style="display:none;"></div>
+			<div id="success-msg" class="success-text" style="display:none"></div>
 			<button type="button" id="login-btn">Login</button>
+			<p class="register-inline">Don't have an account? <a href="../register/">Register here</a>.</p>
+			<a href="../"><button type="button" id="go-back">Back</button></a>
 		</div>
 	</div>
 	<p class="copyright">© 2025 - 2026 Griffin Software</p>
