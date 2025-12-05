@@ -3,14 +3,12 @@ session_start();
 
 require '../config.php';
 
-$salt = getenv('SALT');
-
 $username = trim($_POST['username'] ?? '');
 $password = trim($_POST['password'] ?? '');
 
 if ($username === '' || $password === '')
 {
-	header("Location: login.php?error=" . urlencode("Please enter username and password"));
+	header("Location: /login?error=" . urlencode("Please enter username and password"));
 	exit;
 }
 
@@ -23,23 +21,14 @@ if ($stmt->num_rows === 0)
 {
 	$stmt->close();
 	$mysqli->close();
-	header("Location: login.php?error=" . urlencode("User not found"));
+	header("Location: /login?error=" . urlencode("User not found"));
 	exit;
 }
 
 $stmt->bind_result($id, $stored_hash, $privileges);
 $stmt->fetch();
 
-if ($salt !== '')
-{
-	$password_salted = hash_hmac("sha256", $password, $salt);
-
-	$password_valid = password_verify($password_salted, $stored_hash);
-}
-else
-{
-	$password_valid = password_verify($password, $stored_hash);
-}
+$password_valid = password_verify($password, $stored_hash);
 
 if ($password_valid)
 {
@@ -53,7 +42,7 @@ if ($password_valid)
 } 
 else
 {
-	header("Location: login.php?error=" . urlencode("Invalid password"));
+	header("Location: /login?error=" . urlencode("Invalid password"));
 	exit;
 }
 
