@@ -33,7 +33,7 @@ body
 	text-align: center;
 }
 
-.login-card
+.auth-card
 {
 	display: flex;
 	background-color: #fff;
@@ -42,7 +42,6 @@ body
 	overflow: hidden;
 	width: 600px;
 	max-width: 90%;
-	transition: all 0.5s ease;
 }
 
 .logo-section
@@ -60,7 +59,6 @@ body
 	max-width: 100%;
 	max-height: 175px;
 	object-fit: contain;
-	-webkit-user-drag: none;
 	pointer-events: none;
 }
 
@@ -93,7 +91,7 @@ body
 	outline: none;
 	font-size: 15px;
 	box-sizing: border-box;
-	transition: all 0.3s ease;
+	transition: 0.3s;
 }
 
 .input-group input:focus
@@ -102,39 +100,7 @@ body
 	box-shadow: 0 0 5px rgba(189, 76, 1, 0.3);
 }
 
-.error-text
-{
-	color: #ef0001;
-	font-weight: normal;
-	margin-bottom: 15px;
-	display: none;
-	text-align: left;
-}
-
-.success-text
-{
-	color: #00aa17;
-	font-weight: normal;
-	margin-bottom: 15px;
-	display: none;
-	text-align: left;
-}
-
-button
-{
-	width: 100%;
-	padding: 12px;
-	background-color: #333;
-	color: white;
-	font-size: 16px;
-	font-weight: 600;
-	border: none;
-	border-radius: 6px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-}
-
-.register-inline
+.login-inline
 {
 	margin-top: 13px;
 	font-size: 14px;
@@ -142,16 +108,37 @@ button
 	color: #555;
 }
 
-.register-inline a
+.login-inline a
 {
 	color: #e5993c;
 	font-weight: bold;
 	text-decoration: none;
 }
 
-.register-inline a:hover
+.login-inline a:hover
 {
 	text-decoration: underline;
+}
+
+.error-text
+{
+	color: #ef0001;
+	margin-bottom: 15px;
+	display: none;
+}
+
+button
+{
+	width: 100%;
+	padding: 12px;
+	background-color: #333;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
 button:hover
@@ -167,7 +154,7 @@ button:hover
 
 @media(max-width: 600px)
 {
-	.login-card
+	.auth-card
 	{
 		flex-direction: column;
 	}

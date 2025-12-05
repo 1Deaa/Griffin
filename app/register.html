@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Griffin Login</title>
+	<title>Griffin Register</title>
 	<link href="./media/griffin-logo-transparent.png" rel="icon" type="image/png">
-	<link href="login.css" rel="stylesheet">
+	<link href="register.css" rel="stylesheet">
 </head>
 <body>
-	<h1 class="page-title">Login to Continue</h1>
-	<div class="login-card">
+	<h1 class="page-title">Create an Account</h1>
+	<div class="auth-card">
 		<div class="logo-section">
 			<img src="./media/griffin-logo-transparent.png" alt="Main-Logo">
 		</div>
@@ -22,13 +22,16 @@
 				<label>Password</label>
 				<input type="password" id="password">
 			</div>
+			<div class="input-group">
+				<label>Confirm Password</label>
+				<input type="password" id="confirm-password">
+			</div>
 			<div id="error-msg" class="error-text" style="display:none;"></div>
-			<div id="success-msg" class="success-text" style="display:none"></div>
-			<button type="button" id="login-btn">Login</button>
-			<p class="register-inline">Don't have an account? <a href="register.html">Register here</a>.</p>
+			<button type="button" id="register-btn">Register</button>
+			<p class="login-inline">Already have an account? <a href="index.html">Login here</a>.</p>
 		</div>
 	</div>
 	<p class="copyright">© 2025 - 2026 Griffin Software</p>
-	<script src="login.js"></script>
+	<script src="register.js"></script>
 </body>
 </html>
