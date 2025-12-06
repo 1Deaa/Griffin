@@ -13,7 +13,10 @@ RewriteRule ^register/?$ register/register.php [L,QSA]
 RewriteRule ^logout/?$ logout.php [L,QSA]
 
 # ADMIN OVERVIEW
-RewriteRule ^admin/overview/?$ admin/overview/admin.php [L,QSA]
+RewriteRule ^admin/overview/?$ admin/admin.php [L,QSA]
+
+# ADMIN USERS
+RewriteRule ^admin/users/?$ admin/admin.php [L,QSA]
 
 # ADMIN (shortcut to overview)
-RewriteRule ^admin/?$ admin/overview/admin.php [L,QSA]
+RewriteRule ^admin/?$ admin/admin.php [L,QSA]
